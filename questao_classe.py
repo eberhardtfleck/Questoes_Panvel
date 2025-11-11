@@ -16,12 +16,11 @@ class ListaTarefas:
         print("Tarefa adicionada ao final da lista!")
 
     def remover(self, tarefa):
-        for i in self.lista:
-            if (i == tarefa):
-                self.lista.remove(tarefa)
-                print("Removido a tarefa com sucesso!")
-                return
-        print("Tarefa nao encontrada!")
+        if tarefa in self.lista:
+            self.lista.remove(tarefa)
+            print("Removido a tarefa com sucesso!")
+        else:
+            print("Tarefa não encontrada!")
 
     def listar(self):
         if (len(self.lista) == 0):
@@ -36,7 +35,7 @@ class ListaTarefas:
                 self.lista[i] = self.lista[i] + " - Finalizada"
                 print("Tarefa finalizada com sucesso!")
                 return
-        print("Tarefa nao encontrada!")
+        print("Tarefa não encontrada!")
 
     def total(self):
         return len(self.lista)
